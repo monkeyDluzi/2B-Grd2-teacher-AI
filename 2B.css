@@ -48,3 +48,25 @@ div {
   line-height: 1.8;
   font-size: 22px;
 }
+
+#title {
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+#logo {
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+button {
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.8s;
+  opacity: 0;
+}
+
+.div {
+  animation: fadeIn 1.2s ease-out forwards;
+}

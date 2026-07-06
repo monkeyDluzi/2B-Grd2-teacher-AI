@@ -18,10 +18,9 @@ body {
   transition: transform 0.2s;
 }
 
-logo:hover {
+#logo:hover {
   transform: scale(1.3);
 }
-
 #title {
  position: absolute;
 

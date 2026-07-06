@@ -12,3 +12,24 @@ function typeWriter() {
 }
 
 window.addEventListener("load", typeWriter);
+
+const logo = document.getElementById("logo");
+
+const backgrounds = [
+  "images/AI.gif",
+  "images/bg1.jpg",
+  "images/bg2.jpg",
+  "images/bg3.jpg"
+];
+
+let index = 0;
+
+logo.addEventListener("click", () => {
+  index++;
+
+  if (index >= backgrounds.length) {
+    index = 0;
+  }
+
+  document.body.style.backgroundImage = `url('${backgrounds[index]}')`;
+});

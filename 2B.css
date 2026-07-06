@@ -70,3 +70,12 @@ button {
 .div {
   animation: fadeIn 1.2s ease-out forwards;
 }
+
+#title::after {
+  content: "|";
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}

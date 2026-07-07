@@ -26,7 +26,7 @@ body {
   color: white;
 }
 
-#div {
+#box {
   background: rgba(0, 0, 0, 0.6);
 
   width: 80%;
@@ -39,7 +39,7 @@ body {
 
   border-radius: 20px;
 
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+  box-shadow: 0 0 20px rgba(0, 0, 255, 0.7);
 
   line-height: 1.8;
   font-size: 22px;
@@ -68,7 +68,7 @@ button {
   opacity: 0;
 }
 
-.div {
+#box {
   animation: fadeIn 1.2s ease-out forwards;
 }
 
@@ -80,8 +80,19 @@ button {
 @keyframes blink {
   50% { opacity: 0; }
 }
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 
-div {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#box {
   display: flex;
   flex-direction: column;
   align-items: center;

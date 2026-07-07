@@ -17,9 +17,9 @@ const logo = document.getElementById("logo");
 
 const backgrounds = [
   "images/AI.gif",
-  "images/bg1.jpg",
-  "images/bg2.jpg",
-  "images/bg3.jpg"
+  "images/aib4.jpg",
+  "images/aib5.jpeg",
+  "images/aib7.jpg"
 ];
 
 let index = 0;

@@ -115,3 +115,12 @@ button {
 
   transition: 0.3s;
 }
+
+#leave:hover {
+    transform: scale(1.1);
+    background: linear-gradient(to bottom, #ffd700, #ff8c00);
+}
+
+#leave:active {
+    transform: translateY(6px);
+    box-shadow: 0 0 0 #5a2d0c;

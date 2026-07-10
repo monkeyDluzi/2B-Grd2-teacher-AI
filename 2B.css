@@ -12,19 +12,42 @@ body {
   background-position: center;
   background-repeat: no-repeat;
 }
+
+/* ---------------- Logo ---------------- */
+
 #logo {
   width: 200px;
   cursor: pointer;
+  border-radius: 20px;
+
   transition: transform 0.2s;
+
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
 }
 
 #logo:hover {
   transform: scale(1.3);
 }
+
+/* ---------------- Title ---------------- */
+
 #title {
   font-size: 50px;
   color: white;
+
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
 }
+
+#title::after {
+  content: "|";
+  animation: blink 0.7s infinite;
+}
+
+/* ---------------- Main Box ---------------- */
 
 #box {
   background: rgba(0, 0, 0, 0.6);
@@ -35,7 +58,7 @@ body {
   margin-top: 30px;
   margin-bottom: 30px;
 
- padding: 60px;
+  padding: 60px;
 
   border-radius: 20px;
 
@@ -44,24 +67,17 @@ body {
   line-height: 1.8;
   font-size: 22px;
 
+  min-height: 500px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  min-height: 500px;
+
+  animation: fadeIn 1.2s ease-out forwards;
 }
 
-#title {
-  animation: fadeIn 1s ease-out forwards;
-  animation-delay: 0.2s;
-  opacity: 0;
-}
-
-#logo {
-  animation: fadeIn 1s ease-out forwards;
-  animation-delay: 0.5s;
-  opacity: 0;
-}
+/* ---------------- Buttons ---------------- */
 
 button {
   animation: fadeIn 1s ease-out forwards;
@@ -69,18 +85,43 @@ button {
   opacity: 0;
 }
 
-#box {
-  animation: fadeIn 1.2s ease-out forwards;
+#leave {
+  width: 200px;
+  height: 100px;
+
+  font-size: 24px;
+  color: white;
+
+  background: linear-gradient(to bottom, purple, black);
+
+  border: none;
+  border-radius: 15px;
+
+  box-shadow: 5px 5px 10px gray;
+
+  cursor: pointer;
+
+  transition: 0.3s;
 }
 
-#title::after {
-  content: "|";
-  animation: blink 0.7s infinite;
+#leave:hover {
+  transform: scale(1.1);
+  background: linear-gradient(to bottom, #ffd700, #ff8c00);
 }
+
+#leave:active {
+  transform: translateY(6px);
+  box-shadow: 0 0 0 gray;
+}
+
+/* ---------------- Animations ---------------- */
 
 @keyframes blink {
-  50% { opacity: 0; }
+  50% {
+    opacity: 0;
+  }
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -93,38 +134,3 @@ button {
   }
 }
 
-#box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-#leave { 
-  width: 200px;
-  height: 100px;
-
-  font-size: 24px;
-  color: white;
-
-  background: linear-gradient(to bottom, purple, black);
-  border: none;
-  border-radius: 15px;
-  box-shadow: 5px 5px 10px gray;
-  cursor: pointer;
-
-  transition: 0.3s;
-}
-
-#leave:hover {
-    transform: scale(1.1);
-    background: linear-gradient(to bottom, #ffd700, #ff8c00);
-}
-
-#leave:active {
-    transform: translateY(6px);
-    box-shadow: 0 0 0 #5a2d0c;
-
-#logo {
-  border-radius: 20px;
-}

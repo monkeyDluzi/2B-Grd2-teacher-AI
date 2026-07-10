@@ -124,3 +124,7 @@ button {
 #leave:active {
     transform: translateY(6px);
     box-shadow: 0 0 0 #5a2d0c;
+
+#logo {
+  border-radius: 20px;
+}

@@ -1,2 +1,25 @@
 # 2B-Grd2-teacher-AI
-an AI capable of teaching grade 2 subjects based off the ontario curriculum
+
+2B-Grd2-teacher-AI is a playful web-based prototype for an AI assistant designed to help Grade 2 students learn school subjects using the Ontario curriculum. The goal of the project is to create a friendly, engaging experience that could eventually guide children through lessons in reading, math, science, and language.
+
+## Project Overview
+
+This project combines a simple front-end experience with early ideas for AI-powered teaching. The current version focuses on the visual experience of the app: a welcoming landing page, animated text, and interactive visuals that make the project feel lively and kid-friendly.
+
+## Technologies used
+
+- HTML for the page structure
+- CSS for styling, animations, and layout
+- JavaScript for interactive effects and animated behavior
+- Python for future AI-related logic or processing
+
+## How to run locally
+
+1. Open the project folder in your preferred code editor.
+2. Launch the website by opening index.html in a browser.
+3. If you want to experiment with the Python file, run it with Python from the project folder.
+
+
+## Notes
+
+This repository is currently an early prototype, but it lays the foundation for a more complete educational AI experience.

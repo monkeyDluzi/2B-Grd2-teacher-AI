@@ -19,7 +19,6 @@ This project combines a simple front-end experience with early ideas for AI-powe
 2. Launch the website by opening index.html in a browser.
 3. If you want to experiment with the Python file, run it with Python from the project folder.
 
-
 ## Notes
 
 This repository is currently an early prototype, but it lays the foundation for a more complete educational AI experience.

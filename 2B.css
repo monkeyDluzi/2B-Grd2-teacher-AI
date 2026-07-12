@@ -7,10 +7,13 @@ body {
   justify-content: center;
   align-items: center;
 
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #000;
   background-image: url("images/AI.gif");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /* ---------------- Logo ---------------- */
@@ -19,8 +22,9 @@ body {
   width: 200px;
   cursor: pointer;
   border-radius: 20px;
+  display: block;
 
-  transition: transform 0.2s;
+  transition: transform 0.2s ease;
 
   animation: fadeIn 1s ease-out forwards;
   animation-delay: 0.5s;
@@ -36,6 +40,7 @@ body {
 #title {
   font-size: 50px;
   color: white;
+  min-height: 60px;
 
   animation: fadeIn 1s ease-out forwards;
   animation-delay: 0.2s;
@@ -87,7 +92,8 @@ button {
 
 #leave {
   width: 200px;
-  height: 100px;
+  min-height: 100px;
+  padding: 0 24px;
 
   font-size: 24px;
   color: white;

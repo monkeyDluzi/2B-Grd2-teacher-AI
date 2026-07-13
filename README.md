@@ -14,10 +14,10 @@ This project combines a simple front-end experience with early ideas for AI-powe
 - Python for future AI-related logic or processing
 
 ## Contributors
+
 - monkeyDluzi
 - santiagoalexgonzalezc-sys
 
- 
 ## Notes
 
 This repository is currently an early prototype, but it lays the foundation for a more complete educational AI experience.

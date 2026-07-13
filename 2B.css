@@ -90,7 +90,7 @@ button {
   opacity: 0;
 }
 
-#leave {
+#continue {
   width: 200px;
   min-height: 100px;
   padding: 0 24px;
@@ -110,11 +110,11 @@ button {
   transition: transform 0.25s;
 }
 
-#leave:hover {
+#continue:hover {
   transform: scale(1.1);
 }
 
-#leave:active {
+#continue:active {
   transform: scale(0.95);
 }
 

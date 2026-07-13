@@ -33,3 +33,11 @@ logo.addEventListener("click", () => {
 
   document.body.style.backgroundImage = `url('${backgrounds[index]}')`;
 });
+
+function goMain() {
+  window.location.href = "pages/main.html";
+}
+
+const continueButton = document.getElementById("continue");
+continueButton.addEventListener("click", goMain);
+

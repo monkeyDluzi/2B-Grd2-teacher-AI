@@ -9,21 +9,21 @@ This project combines a simple front-end experience with early ideas for AI-powe
 ## Project Tree
 
 2B-Grd2-teacher-AI/
-├── 2B.js
-├── brain.py
-├── images/
-│   ├── AI.gif
-│   ├── lol.gif
-│   ├── 6767.gif
-│   ├── 8989.gif
-│   ├── IMG_0420.jpeg
-│   └── mainBackground.jpg
-├── pages/
-│   ├── 2B.css
-│   ├── index.html
-│   ├── main.css
-│   └── main.html
-└── README.md
+  2B.js
+  brain.py
+  images/
+    AI.gif
+    lol.gif
+    6767.gif
+    8989.gif
+    IMG_0420.jpeg
+    mainBackground.jpg
+    pages/
+      2B.css
+      index.html
+      main.css
+      main.html
+  README.md
 
 ## How It Works
 

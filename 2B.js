@@ -16,10 +16,10 @@ window.addEventListener("load", typeWriter);
 const logo = document.getElementById("logo");
 
 const backgrounds = [
-  "images/AI.gif",
-  "images/lol.gif",
-  "images/6767.gif",
-  "images/8989.gif"
+  "../images/AI.gif",
+  "../images/lol.gif",
+  "../images/6767.gif",
+  "../images/8989.gif"
 ];
 
 let index = 0;

@@ -50,7 +50,7 @@ This project combines a simple front-end experience with early ideas for AI-powe
 -monkeyDluzi
 -santiagoalexgonzalezc-sys
 
-[https://img.shields.io/github/contributors/monkeyDluzi/https%3A%2F%2Fgithub.com%2FmonkeyDluzi%2F2B-Grd2-teacher-AI]
+
 
 ## Notes
 

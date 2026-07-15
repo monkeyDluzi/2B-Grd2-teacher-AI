@@ -50,6 +50,8 @@ This project combines a simple front-end experience with early ideas for AI-powe
 -monkeyDluzi
 -santiagoalexgonzalezc-sys
 
+https://img.shields.io/github/contributors/monkeyDluzi/https%3A%2F%2Fgithub.com%2FmonkeyDluzi%2F2B-Grd2-teacher-AI
+
 ## Notes
 
 This repository is currently an early prototype, but it lays the foundation for a more complete educational AI experience. The current version focuses on the visual design and basic interaction flow, with room to grow into a richer learning tool.

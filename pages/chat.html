@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Main Section</title>
+  <title>2B Chat</title>
   <link rel="stylesheet" href="main.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,39 +20,29 @@
       </div>
       <nav class="nav" role="navigation" aria-label="Main navigation">
         <a href="../index.html" class="nav-link" aria-label="Navigate to home page">Home</a>
-        <a href="chat.html" class="nav-link" aria-label="Navigate to 2B chat section">2B Section</a>
+        <a href="main.html" class="nav-link" aria-label="Navigate to main page">2B Section</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" role="main" aria-label="Welcome section">
-    <div class="hero-content">
-      <div class="hero-text">
-        <h1 class="hero-title">Welcome to Your AI Learning Friend! 🎓</h1>
-        <p class="hero-subtitle">Hi there! I'm here to help you learn in a fun way!</p>
+  <!-- Chat Section -->
+  <section class="chat-section" role="main" aria-label="Chat with 2B AI Teacher">
+    <div class="chat-container">
+      <div class="chat-header">
+        <h2>Chat with 2B AI Teacher</h2>
+      </div>
+      
+      <div class="chat-messages" id="chatMessages">
+        <div class="message received">
+          <div class="message-content">
+            <p>Hi there! I'm 2B, your AI learning friend. How can I help you today?</p>
+          </div>
+        </div>
       </div>
 
-      <div class="subjects-grid">
-        <div class="subject-card math-card">
-          <h2>🔢 Math</h2>
-          <p>Learn numbers, counting, addition, subtraction, shapes, and patterns through fun games and activities!</p>
-        </div>
-
-        <div class="subject-card reading-card">
-          <h2>📚 Reading</h2>
-          <p>Practice reading stories, learn new words, improve spelling, and discover the joy of books!</p>
-        </div>
-
-        <div class="subject-card science-card">
-          <h2>🔬 Science</h2>
-          <p>Explore the world around you! Learn about plants, animals, weather, and how things work.</p>
-        </div>
-
-        <div class="subject-card language-card">
-          <h2>✏️ Language</h2>
-          <p>Build your vocabulary, practice grammar, write sentences, and express your ideas clearly!</p>
-        </div>
+      <div class="chat-input-container">
+        <input type="text" id="chatInput" class="chat-input" placeholder="Type your message..." aria-label="Type your message">
+        <button id="sendButton" class="send-button" aria-label="Send message">Send</button>
       </div>
     </div>
   </section>
@@ -67,6 +57,7 @@
       <div class="footer-section">
         <h4>Quick Links</h4>
         <a href="../index.html" aria-label="Navigate to home page">Back to Home</a>
+        <a href="main.html" aria-label="Navigate to main page">Main Page</a>
       </div>
       <div class="footer-section">
         <h4>Ontario Curriculum</h4>
@@ -78,6 +69,5 @@
     </div>
   </footer>
 
-  <script src="main.js"></script>
 </body>
 </html>

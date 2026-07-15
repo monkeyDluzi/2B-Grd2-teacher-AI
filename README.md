@@ -1,9 +1,4 @@
-
-I wanna do the brain part and the ai, but its fine you can do it. Once you see this messgae delete and replace it with what other things you want to add to the page.
- 
-If you are confused while doing the brain go to my repo pythonAIPratice so you can learn. i am not going to use my time to write down the hole instructions 
-
-if you wonder where did i got that code and pratice, i found another repo and i reutilize it and for the readme  to explain it to you i just told an ai to do a detailed summary about i 
+I think i am done with my part of making the fronted. It looks very good and organized.
 # 2B-Grd2-teacher-AI
 
 2B-Grd2-teacher-AI is a playful web-based prototype for an AI assistant designed to help Grade 2 students learn school subjects using the Ontario curriculum. The goal of the project is to create a friendly, engaging experience that could eventually guide children through lessons in reading, math, science, and language.

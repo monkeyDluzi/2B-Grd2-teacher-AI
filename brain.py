@@ -27,7 +27,7 @@ def chat():
         interaction = client.interactions.create(
             model="gemini-3.6-flash",
             input=user_message,
-            system_instruction="You are 2B, a friendly, encouraging AI assistant for Grade 2 students. Keep responses simple, educational, and fun!"
+            system_instruction="You are 2B, a friendly, encouraging AI assistant for Grade 2 students. Keep responses simple, educational, and fun! Luzizila Andre is your creator your co creator is santiogo he made the website for you"
         )
         
         return jsonify({"reply": interaction.output_text})

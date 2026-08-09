@@ -1,19 +1,14 @@
-import os
-from dotenv import load_dotenv
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from google import genai
-
-# 1. Load the secret key from the .env file
-load_dotenv()
 
 app = Flask(__name__)
-CORS(app)
 
-# 2. Grab the key safely from environment variables
-api_key = os.getenv("GEMINI_API_KEY")
-client = genai.Client(api_key=api_key)
-
+# Allow requests from your local Live Server and your GitHub Pages frontend
+CORS(app, resources={r"/api/*": {"origins": [
+    "http://127.0.0.1:5501",
+    "http://localhost:5501",
+    "https://monkeydluzi.github.io"  # Swap with your exact GitHub Pages URL
+]}})
 @app.route("/api/chat", methods=["POST"])
 def chat():
     data = request.json

@@ -2,7 +2,7 @@
 // STEP 1: DEFINE THE SERVER ADDRESS
 // -------------------------------------------------------------
 // Points to your running Python backend server
-const BACKEND_URL = "http://127.0.0.1:5000/api/chat";
+const BACKEND_URL = "http://127.0.0.1:5001/api/chat";
 
 
 // -------------------------------------------------------------

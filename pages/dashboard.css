@@ -106,3 +106,57 @@ body {
   outline: 3px solid var(--color-primary);
   outline-offset: 4px;
 }
+
+/* Footer */
+.footer {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: var(--color-light);
+  padding: var(--spacing-2xl) var(--spacing-2xl) var(--spacing-md);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+}
+
+.footer-section h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+}
+
+.footer-section p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: 0.9;
+}
+
+.footer-section a {
+  display: block;
+  color: var(--color-light);
+  text-decoration: none;
+  margin-bottom: var(--spacing-xs);
+  font-size: 12px;
+  transition: opacity var(--duration-normal) var(--ease-out);
+}
+
+.footer-section a:hover {
+  opacity: 0.8;
+}
+
+.footer-section a:focus {
+  outline: 2px solid var(--color-light);
+  outline-offset: 2px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: var(--spacing-sm);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 12px;
+  opacity: 0.9;
+}

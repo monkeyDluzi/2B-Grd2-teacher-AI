@@ -51,27 +51,21 @@ def chat():
         })
 
     try:
-        # Correct SDK method: client.models.generate_content
-        response = client.models.generate_content(
-            model="gemini-2.0-flash",
-            contents=user_message,
-            config=types.GenerateContentConfig(
-                system_instruction=(
-                    "You are 2B, a friendly, encouraging AI teacher for any Grade students. "
-                    "Keep responses simple, educational, and fun!"
-                )
+        # Use the Interactions API with gemini-2.5-flash
+        interaction = client.interactions.create(
+            model="gemini-2.5-flash",
+            input=user_message,
+            system_instruction=(
+                "You are 2B, a friendly, encouraging AI teacher for any Grade. "
+                "Keep responses simple, educational, and fun!"
             )
         )
         
-        # Correct output field: response.text
-        return jsonify({"reply": response.text})
+        # Access response text from interaction.output_text
+        return jsonify({"reply": interaction.output_text})
 
     except Exception as e:
         print("\n" + "="*50)
         print("GEMINI ERROR DETAILS:", e)
         print("="*50 + "\n")
         return jsonify({"error": str(e)}), 500
-
-
-if __name__ == "__main__":
-    app.run(port=5001, debug=True)

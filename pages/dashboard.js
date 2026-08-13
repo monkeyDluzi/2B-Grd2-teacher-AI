@@ -53,3 +53,60 @@ shopOverlay.addEventListener("click", (event) => {
         shopOverlay.classList.remove("show");
     }
 });
+
+// ================================
+// 🎓 GRADE SELECTION
+// ================================
+
+const profileIcon = document.querySelector(".profile-icon");
+
+const gradeOverlay = document.getElementById("gradeOverlay");
+
+const closeGrade = document.getElementById("closeGrade");
+
+const gradeButtons = document.querySelectorAll(".grade-button");
+
+const selectedGrade = document.getElementById("selectedGrade");
+
+
+// Open grade overlay
+profileIcon.addEventListener("click", () => {
+    gradeOverlay.classList.add("show");
+});
+
+
+// Close grade overlay
+closeGrade.addEventListener("click", () => {
+    gradeOverlay.classList.remove("show");
+});
+
+
+// Select a grade
+gradeButtons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+        const grade = button.dataset.grade;
+
+        localStorage.setItem("grade", grade);
+
+        selectedGrade.textContent = `My grade is Grade ${grade}`;
+
+        gradeButtons.forEach((otherButton) => {
+            otherButton.classList.remove("selected");
+        });
+
+        button.classList.add("selected");
+    });
+
+});
+
+
+// Close when clicking outside the modal
+gradeOverlay.addEventListener("click", (event) => {
+
+    if (event.target === gradeOverlay) {
+        gradeOverlay.classList.remove("show");
+    }
+
+});

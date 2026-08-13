@@ -8,13 +8,20 @@ let streak = Number(localStorage.getItem("streak")) || 0;
 let lastVisit = localStorage.getItem("lastVisit");
 
 const today = new Date().toDateString();
+const yesterday = new Date(Date.now() - 86400000).toDateString();
 
-if (lastVisit !== today) {
+if (!lastVisit) {
+    streak = 1;
+} else if (lastVisit === today) {
+    streak = streak;
+} else if (lastVisit === yesterday) {
     streak++;
-
-    localStorage.setItem("streak", streak);
-    localStorage.setItem("lastVisit", today);
+} else {
+    streak = 1;
 }
+
+localStorage.setItem("streak", streak);
+localStorage.setItem("lastVisit", today);
 
 streakCount.textContent = streak;
 

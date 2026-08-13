@@ -535,3 +535,94 @@
     cursor: pointer;
 }
 
+
+/* ================================
+   GRADE SELECTION OVERLAY
+================================ */
+
+.grade-overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.6);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.2s;
+}
+
+.grade-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.grade-modal {
+    position: relative;
+
+    width: 500px;
+    min-height: 300px;
+
+    background: white;
+    border-radius: 20px;
+
+    padding: 30px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.close-grade {
+    position: absolute;
+
+    top: 12px;
+    right: 12px;
+
+    border: none;
+    background: none;
+
+    font-size: 22px;
+    color: red;
+
+    cursor: pointer;
+}
+
+.grade-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.grade-button {
+    padding: 12px 18px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: #667eea;
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.grade-button:hover {
+    transform: scale(1.05);
+}
+
+.grade-button.selected {
+    background: #4caf50;
+}
+
+#selectedGrade {
+    margin-top: 20px;
+    font-weight: bold;
+}

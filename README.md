@@ -1,57 +1,92 @@
 
 # 2B-Grd2-teacher-AI
 
-2B-Grd2-teacher-AI is a playful web-based prototype for an AI assistant designed to help Grade 2 students learn school subjects using the Ontario curriculum. The goal of the project is to create a friendly, engaging experience that could eventually guide children through lessons in reading, math, science, and language.
+2B-Grd2-teacher-AI is a playful web-based AI assistant designed to help Grade 2 students learn school subjects using the Ontario curriculum. The project creates a friendly, engaging experience that guides children through lessons in reading, math, science, and language through interactive UI and AI-powered conversations.
 
-## Project Overview
+## 🌟 Features
 
-This project combines a simple front-end experience with early ideas for AI-powered teaching. The current version focuses on the visual experience of the app: a welcoming landing page, animated text, interactive visuals, and a second main section that helps the project feel lively and kid-friendly.
+- **Landing Page**: Animated typing effect, interactive logo with background cycling, smooth transitions
+- **Main Page**: Subject cards (Math, Reading, Science, Language), responsive navigation, interactive hover effects
+- **AI Chat Interface**: Real-time chat with AI teacher "2B", message bubbles, backend API integration
+- **Dashboard**: Responsive header, user profile with coin display, navigation buttons, mobile-first design
+- **Design System**: CSS variables, modern gradients, smooth animations, accessibility-focused
 
-## Project Tree
+## 📁 Project Structure
 
+```text
 2B-Grd2-teacher-AI/
-  2B.js
-  brain.py
-  images/
-    AI.gif
-    lol.gif
-    6767.gif
-    8989.gif
-    IMG_0420.jpeg
-    mainBackground.jpg
-    pages/
-      2B.css
-      index.html
-      main.css
-      main.html
-  README.md
+├── index.html                 # Main landing page
+├── 2B.css/js                  # Landing page styles & interactions
+├── brain.py                   # Backend AI logic
+├── requirements.txt           # Python dependencies
+├── images/                    # Image assets
+└── pages/                     # Main application pages
+    ├── main.html/css/js       # Main subject selection
+    ├── chat.html/Chat.js      # AI chat interface
+    ├── dashboard.html/css/js  # User dashboard
+    └── index.html             # Pages entry point
+```
 
-## How It Works
+## 🔧 How It Works
 
--index.html is the landing page for the project.
--2B.css contains the styling for the first page.
--2B.js adds the interactive behavior:
--it displays the animated typing effect for the title
--it changes the background image when the logo is clicked
--it sends the user to main.html when the Continue button is pressed
--main.html and main.css style the second page, where the main section is displayed.
--brain.py is currently a placeholder file for future AI-related logic or processing.
+### Landing Page: **2B.js** handles animations, background cycling, transitions; **2B.css** provides styling
 
-## Technologies Used
+### Main Page: **main.css** styles subject cards and responsive layout; **main.js** adds animations
 
--Technologies Used
--HTML for the page structure
--CSS for styling, layout, and visual effects
--JavaScript for interactive behavior and page transitions
--Python for future AI-related logic or processing
+### Chat Interface: **Chat.js** integrates with API (`https://2b-grd2-teacher-ai.onrender.com/api/chat`) for real-time AI conversation
 
-## Contributors
+### Dashboard: **dashboard.css** provides responsive styling; **dashboard.js** handles interactions; features user profile with coin system
 
--monkeyDluzi
--santiagoalexgonzalezc-sys
+## 🛠 Technologies Used
 
+**Frontend**: HTML5, CSS3, JavaScript (ES6+), Google Fonts (Nunito) | **Backend**: Python, Flask, Render (cloud hosting) | **Design**: CSS variables, Flexbox/Grid, animations, ARIA accessibility
 
+## 📱 Responsive Design
 
-## Notes
+- **Desktop** (1024px+): Full multi-column layouts
+- **Tablet** (768px-1024px): Adjusted spacing, 2-column layouts
+- **Mobile** (480px-768px): Single column, touch-optimized
+- **Small Mobile** (<480px): Compact layout with wrapped elements
 
-This repository is currently an early prototype, but it lays the foundation for a more complete educational AI experience. The current version focuses on the visual design and basic interaction flow, with room to grow into a richer learning tool.
+## 🚀 Getting Started
+
+### Prerequisites: Modern web browser, Python 3.x (for backend), Internet connection
+
+### Installation
+
+```bash
+git clone https://github.com/yourusername/2B-Grd2-teacher-AI.git
+cd 2B-Grd2-teacher-AI
+pip install -r requirements.txt  # For backend
+```
+
+### Usage: Open `index.html` in browser or use local server
+
+```bash
+python -m http.server 8000
+# Navigate to http://localhost:8000
+```
+
+## 👥 Contributors
+
+- **monkeyDluzi** 
+- **santiagoalexgonzalezc-sys** 
+
+## 🎯 Future Enhancements
+
+- [ ] Complete backend AI integration with custom curriculum
+- [ ] Add interactive learning games and quizzes
+- [ ] Implement user progress tracking
+- [ ] Enhance coin/reward system
+- [ ] Add parent/teacher dashboard
+- [ ] Implement user authentication
+
+## 📄 License
+
+Educational prototype project in active development.
+
+## 🙏 Acknowledgments
+
+- Ontario Curriculum guidelines
+- Google Fonts for Nunito typeface
+- Open-source web development community

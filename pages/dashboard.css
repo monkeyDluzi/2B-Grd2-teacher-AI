@@ -1,73 +1,9 @@
-/* CSS Variables - Design System */
-:root {
-  /* Colors */
-  --color-primary: #667eea;
-  --color-secondary: #764ba2;
-  --color-accent: #a855f7;
-  --color-dark: #000000;
-  --color-light: #ffffff;
-  --color-gray: #808080;
-  --color-gray-light: #e5e5e5;
-  --color-text: #333333;
-  --color-text-light: #555555;
-  --color-text-muted: #666666;
+/* ========================================
+   DASHBOARD.CSS - Dashboard Page Specific Styles
+   Import shared.css for common styles
+   ======================================== */
 
-  /* Spacing */
-  --spacing-xs: 4px;
-  --spacing-sm: 8px;
-  --spacing-md: 16px;
-  --spacing-lg: 24px;
-  --spacing-xl: 32px;
-  --spacing-2xl: 48px;
-  --spacing-3xl: 64px;
-
-  /* Border Radius */
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-xl: 20px;
-  --radius-2xl: 24px;
-
-  /* Shadows */
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.2);
-  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.3);
-  --shadow-glow: 0 0 20px rgba(102, 126, 234, 0.7);
-
-  /* Animation Timing */
-  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-  --ease-out: cubic-bezier(0, 0, 0.2, 1);
-  --ease-in: cubic-bezier(0.4, 0, 1, 1);
-  --duration-fast: 0.2s;
-  --duration-normal: 0.3s;
-  --duration-slow: 0.5s;
-}
-
-/* Reset and Base Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Nunito', Arial, sans-serif;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-  min-height: 100vh;
-  color: var(--color-text);
-  line-height: 1.6;
-}
-
-/* Header Styles */
-.header {
-  background: rgba(255, 255, 255, 0.95);
-  padding: var(--spacing-md) var(--spacing-2xl);
-  box-shadow: var(--shadow-sm);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
+/* Dashboard Header Layout */
 .header-container {
   max-width: 100%;
   display: flex;
@@ -92,24 +28,6 @@ body {
   font-weight: 800;
   color: var(--color-dark);
   font-family: 'Nunito', Arial, sans-serif;
-}
-
-#logo {
-  width: 60px;
-  height: 60px;
-  border-radius: var(--radius-md);
-  object-fit: cover;
-  box-shadow: var(--shadow-md);
-  transition: transform var(--duration-normal) var(--ease-out);
-}
-
-#logo:hover {
-  transform: scale(1.1) rotate(5deg);
-}
-
-#logo:focus {
-  outline: 3px solid var(--color-primary);
-  outline-offset: 4px;
 }
 
 .nav {
@@ -280,88 +198,94 @@ body {
   }
 }
 
-/* Footer */
-.footer {
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-  color: var(--color-light);
-  padding: var(--spacing-2xl) var(--spacing-2xl) var(--spacing-md);
+/* Shop Card */
+.shop-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: var(--spacing-xl);
 }
 
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+.shop-card {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-lg) var(--spacing-xl);
+  display: flex;
+  align-items: center;
   gap: var(--spacing-lg);
-  margin-bottom: var(--spacing-md);
+  box-shadow: 0 8px 16px rgba(79, 172, 254, 0.3);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform var(--duration-normal) var(--ease-out), box-shadow var(--duration-normal) var(--ease-out);
+  animation: slideInRight 0.6s var(--ease-out) 0.2s backwards;
 }
 
-.footer-section h4 {
+.shop-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(79, 172, 254, 0.4);
+}
+
+.shop-icon {
+  font-size: 48px;
+  animation: shopBounce 1s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.4));
+}
+
+.shop-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-sm);
+}
+
+.shop-label {
   font-size: 16px;
   font-weight: 700;
-  margin-bottom: var(--spacing-sm);
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.footer-section p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: 0.9;
+.shop-button {
+  background: white;
+  color: #4facfe;
+  border: none;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+  font-family: 'Nunito', Arial, sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.footer-section a {
-  display: block;
-  color: var(--color-light);
-  text-decoration: none;
-  margin-bottom: var(--spacing-xs);
-  font-size: 12px;
-  transition: opacity var(--duration-normal) var(--ease-out);
+.shop-button:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.footer-section a:hover {
-  opacity: 0.8;
-}
-
-.footer-section a:focus {
-  outline: 2px solid var(--color-light);
+.shop-button:focus {
+  outline: 2px solid white;
   outline-offset: 2px;
 }
 
-.footer-bottom {
-  text-align: center;
-  padding-top: var(--spacing-sm);
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  font-size: 12px;
-  opacity: 0.9;
-}
-
-/* Animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes bounce {
+@keyframes shopBounce {
   0%, 100% {
-    transform: translateY(0);
+    transform: translateY(0) rotate(-5deg);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-8px) rotate(5deg);
   }
 }
 
-/* Responsive Design */
+/* ========================================
+   RESPONSIVE DESIGN - Dashboard Page
+   ======================================== */
+
 @media (max-width: 768px) {
   /* Header Styles */
-  .header {
-    padding: var(--spacing-sm) var(--spacing-md);
-  }
-
   .header-container {
     padding: 0 var(--spacing-md);
     gap: var(--spacing-md);
@@ -428,62 +352,28 @@ body {
     font-size: 32px;
   }
 
-  /* Footer Styles */
-  .footer {
-    padding: var(--spacing-lg) var(--spacing-md) var(--spacing-sm);
-  }
-
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-md);
-  }
-
-  .footer-section h4 {
-    font-size: 14px;
-  }
-
-  .footer-section p,
-  .footer-section a {
-    font-size: 11px;
-  }
-
-  .footer-bottom {
-    font-size: 11px;
-  }
-
-  /* Streak Card Responsive */
-  .dashboard-content {
-    padding: var(--spacing-lg) var(--spacing-md) 0;
-  }
-
-  .streak-container {
-    margin-bottom: var(--spacing-lg);
-  }
-
-  .streak-card {
+  /* Shop Card Responsive */
+  .shop-card {
     padding: var(--spacing-md) var(--spacing-lg);
     gap: var(--spacing-md);
   }
 
-  .streak-icon {
+  .shop-icon {
     font-size: 36px;
   }
 
-  .streak-label {
-    font-size: 12px;
+  .shop-label {
+    font-size: 14px;
   }
 
-  .streak-count {
-    font-size: 28px;
+  .shop-button {
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: 13px;
   }
 }
 
 @media (max-width: 480px) {
   /* Header Styles */
-  .header {
-    padding: var(--spacing-xs) var(--spacing-sm);
-  }
-
   .header-container {
     padding: 0 var(--spacing-sm);
     flex-wrap: wrap;
@@ -536,26 +426,49 @@ body {
     height: 24px;
   }
 
-  /* Footer Styles */
-  .footer {
-    padding: var(--spacing-md) var(--spacing-sm) var(--spacing-xs);
+  /* Dashboard Content Responsive */
+  .dashboard-content {
+    padding: var(--spacing-lg) var(--spacing-md) 0;
   }
 
-  .footer-content {
+  .streak-container {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .streak-card {
+    padding: var(--spacing-md) var(--spacing-lg);
+    gap: var(--spacing-md);
+  }
+
+  .streak-icon {
+    font-size: 36px;
+  }
+
+  .streak-label {
+    font-size: 12px;
+  }
+
+  .streak-count {
+    font-size: 28px;
+  }
+
+  /* Shop Card Responsive */
+  .shop-card {
+    padding: var(--spacing-sm) var(--spacing-md);
     gap: var(--spacing-sm);
   }
 
-  .footer-section h4 {
-    font-size: 13px;
+  .shop-icon {
+    font-size: 32px;
   }
 
-  .footer-section p,
-  .footer-section a {
-    font-size: 10px;
+  .shop-label {
+    font-size: 12px;
   }
 
-  .footer-bottom {
-    font-size: 10px;
+  .shop-button {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 12px;
   }
 }
 
@@ -569,10 +482,7 @@ body {
     font-size: 15px;
     padding: var(--spacing-sm) var(--spacing-md);
   }
-
-  .footer-content {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
+
 
 

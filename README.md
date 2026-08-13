@@ -61,15 +61,6 @@ python -m http.server 8000
 - **monkeyDluzi** 
 - **santiagoalexgonzalezc-sys** 
 
-##  Future Enhancements
-
-- [ ] Complete backend AI integration with custom curriculum
-- [ ] Add interactive learning games and quizzes
-- [ ] Implement user progress tracking
-- [ ] Enhance coin/reward system
-- [ ] Add parent/teacher dashboard
-- [ ] Implement user authentication
-
 ##  License
 
 Educational prototype project in active development.

@@ -71,9 +71,15 @@ body {
 .header-container {
   max-width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 0 var(--spacing-2xl);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
 }
 
 .logo-section {
@@ -104,6 +110,83 @@ body {
 #logo:focus {
   outline: 3px solid var(--color-primary);
   outline-offset: 4px;
+}
+
+.nav {
+  display: flex;
+  gap: var(--spacing-lg);
+  align-items: center;
+}
+
+.nav-button {
+  background: transparent;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 16px;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-out);
+  font-family: 'Nunito', Arial, sans-serif;
+}
+
+.nav-button:hover {
+  background: var(--color-primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.nav-button:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.coin-display {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  background: linear-gradient(135deg, #ffd700 0%, #ffaa00 100%);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.coin-emoji {
+  font-size: 20px;
+}
+
+.coin-count {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-dark);
+}
+
+.profile-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-gray-light);
+  cursor: pointer;
+  transition: transform var(--duration-normal) var(--ease-out);
+}
+
+.profile-icon:hover {
+  transform: scale(1.1);
+}
+
+.profile-icon:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 /* Footer */
@@ -180,3 +263,4 @@ body {
     transform: translateY(-10px);
   }
 }
+

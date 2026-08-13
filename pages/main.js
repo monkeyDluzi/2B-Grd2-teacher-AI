@@ -1,11 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Logo click interaction
   const logo = document.getElementById('logo');
   if (logo) {
     logo.addEventListener('click', function() {
-      // Add a fun animation when logo is clicked
       this.style.animation = 'none';
-      this.offsetHeight; // Trigger reflow
+      this.offsetHeight;
       this.style.animation = 'bounce 0.5s ease 3';
       
       setTimeout(() => {
@@ -14,5 +12,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  console.log(' Main page loaded');
+  const getStartedBtn = document.querySelector('.get-started-btn');
+  if (getStartedBtn) {
+    const hasProfile = localStorage.getItem('studentName') && localStorage.getItem('studentGrade');
+    if (hasProfile) {
+      getStartedBtn.textContent = 'Continue to Dashboard';
+      getStartedBtn.href = 'dashboard.html';
+    }
+  }
 });

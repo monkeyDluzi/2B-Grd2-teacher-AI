@@ -1,4 +1,4 @@
-I think i am done with my part of making the fronted. It looks very good and organized.
+
 # 2B-Grd2-teacher-AI
 
 2B-Grd2-teacher-AI is a playful web-based prototype for an AI assistant designed to help Grade 2 students learn school subjects using the Ontario curriculum. The goal of the project is to create a friendly, engaging experience that could eventually guide children through lessons in reading, math, science, and language.

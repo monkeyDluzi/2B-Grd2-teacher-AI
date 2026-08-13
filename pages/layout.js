@@ -5,8 +5,7 @@ const headerHTML = `
       </div>
       <nav class="nav" role="navigation" aria-label="Main navigation">
         <a href="main.html" class="nav-link" aria-label="Navigate to home page">Home</a>
-        <a href="chat.html" class="nav-link" aria-label="Navigate to 2B chat section">2B Section</a>
-        <a href="dashboard.html" class="nav-link" aria-label="Navigate to Dashboard section">Dashboard</a>
+        <a href="about.html" class="nav-link" aria-label="Navigate to About us page">About us</a>
       </nav>
     </div>
 `;
@@ -16,12 +15,6 @@ const footerHTML = `
       <div class="footer-section">
         <h4>2B AI Teacher</h4>
         <p>Making learning fun for students</p>
-      </div>
-      <div class="footer-section">
-        <h4>Quick Links</h4>
-        <a href="main.html" aria-label="Navigate to home page">Back to Home</a>
-        <a href="chat.html" aria-label="Navigate to main page">2B AI</a>
-        <a href="dashboard.html" aria-label="Navigate to main page">Dashboard</a>
       </div>
       <div class="footer-section">
         <h4>Ontario Curriculum</h4>
@@ -66,12 +59,6 @@ const footerHTMLDashboard = `
             <div class="footer-section">
                 <h4>2B AI Teacher</h4>
                 <p>Making learning fun for students</p>
-            </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <a href="main.html" aria-label="Navigate to home page">Back to Home</a>
-                <a href="chat.html" aria-label="Navigate to main page">2B AI</a>
-                <a href="dashboard.html" aria-label="Navigate to main page">Dashboard</a>
             </div>
             <div class="footer-section">
                 <h4>Ontario Curriculum</h4>

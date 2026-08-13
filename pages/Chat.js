@@ -48,11 +48,15 @@ function handleSend() {
 // STEP 4: TALK TO THE PYTHON BACKEND
 // -------------------------------------------------------------
 async function sendMessageTo2B(userText) {
-  // 1. Show student's message on screen
-  appendMessage("user", userText);
+  const chatInput = document.getElementById("chatInput");
+  const sendButton = document.getElementById("sendButton");
+
+  const loadingId = showLoading();
+
+  chatInput.disabled = true;
+  sendButton.disabled = true;
 
   try {
-    // 2. Send request to Python server
     const response = await fetch(BACKEND_URL, {
       method: "POST",
       headers: {
@@ -61,9 +65,10 @@ async function sendMessageTo2B(userText) {
       body: JSON.stringify({ message: userText })
     });
 
+    removeLoading(loadingId);
+
     const data = await response.json();
 
-    // 3. Show 2B's answer on screen
     if (data.reply) {
       appendMessage("2B", data.reply);
     } else {
@@ -71,8 +76,45 @@ async function sendMessageTo2B(userText) {
     }
 
   } catch (error) {
+    removeLoading(loadingId);
     console.error("Error communicating with 2B backend:", error);
     appendMessage("2B", "Sorry, I can't connect to my brain server right now!");
+  } finally {
+    chatInput.disabled = false;
+    sendButton.disabled = false;
+    chatInput.focus();
+  }
+}
+
+
+function showLoading() {
+  const chatMessages = document.getElementById("chatMessages");
+
+  const messageDiv = document.createElement("div");
+  messageDiv.className = "message received loading-message";
+  messageDiv.id = "loading-" + Date.now();
+
+  const contentDiv = document.createElement("div");
+  contentDiv.className = "message-content";
+
+  const typingDiv = document.createElement("div");
+  typingDiv.className = "typing-dots";
+  typingDiv.innerHTML = "<span></span><span></span><span></span>";
+
+  contentDiv.appendChild(typingDiv);
+  messageDiv.appendChild(contentDiv);
+  chatMessages.appendChild(messageDiv);
+
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+
+  return messageDiv.id;
+}
+
+
+function removeLoading(id) {
+  const el = document.getElementById(id);
+  if (el) {
+    el.remove();
   }
 }
 
@@ -81,24 +123,20 @@ async function sendMessageTo2B(userText) {
 // STEP 5: DRAW CHAT BUBBLES IN YOUR HTML CHAT BOX
 // -------------------------------------------------------------
 function appendMessage(sender, text) {
-  // Find your existing chat messages div (<div id="chatMessages">)
   const chatMessages = document.getElementById("chatMessages");
 
-  // Create outer div (<div class="message ...">)
   const messageDiv = document.createElement("div");
   messageDiv.className = sender === "2B" ? "message received" : "message sent";
 
-  // Create inner content div (<div class="message-content">)
   const contentDiv = document.createElement("div");
   contentDiv.className = "message-content";
 
-  // Add message text inside
-  contentDiv.innerHTML = `<p>${text}</p>`;
+  const paragraph = document.createElement("p");
+  paragraph.textContent = text;
 
-  // Assemble the elements together
+  contentDiv.appendChild(paragraph);
   messageDiv.appendChild(contentDiv);
   chatMessages.appendChild(messageDiv);
 
-  // Automatically scroll down to the newest message
   chatMessages.scrollTop = chatMessages.scrollHeight;
 }

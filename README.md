@@ -26,17 +26,6 @@
     ├── dashboard.html/css/js  # User dashboard
     └── index.html             # Pages entry point
 ```
-
-##  How It Works
-
-### Landing Page: **2B.js** handles animations, background cycling, transitions; **2B.css** provides styling
-
-### Main Page: **main.css** styles subject cards and responsive layout; **main.js** adds animations
-
-### Chat Interface: **Chat.js** integrates with API (`https://2b-grd2-teacher-ai.onrender.com/api/chat`) for real-time AI conversation
-
-### Dashboard: **dashboard.css** provides responsive styling; **dashboard.js** handles interactions; features user profile with coin system
-
 ##  Technologies Used
 
 **Frontend**: HTML5, CSS3, JavaScript (ES6+), Google Fonts (Nunito) | **Backend**: Python, Flask, Render (cloud hosting) | **Design**: CSS variables, Flexbox/Grid, animations, ARIA accessibility

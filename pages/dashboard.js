@@ -1,3 +1,5 @@
+document.addEventListener("DOMContentLoaded", () => {
+
 // ================================
 // 🔥 STREAK SYSTEM
 // ================================
@@ -68,9 +70,25 @@ const gradeButtons = document.querySelectorAll(".grade-button");
 
 const selectedGrade = document.getElementById("selectedGrade");
 
+function getCurrentGrade() {
+    return localStorage.getItem("studentGrade");
+}
+
+function highlightCurrentGrade() {
+    const currentGrade = getCurrentGrade();
+    gradeButtons.forEach((button) => {
+        button.classList.toggle("selected", button.dataset.grade === currentGrade);
+    });
+    if (currentGrade) {
+        selectedGrade.textContent = `My grade is Grade ${currentGrade}`;
+    } else {
+        selectedGrade.textContent = "No grade selected";
+    }
+}
 
 // Open grade overlay
 profileIcon.addEventListener("click", () => {
+    highlightCurrentGrade();
     gradeOverlay.classList.add("show");
 });
 
@@ -83,30 +101,31 @@ closeGrade.addEventListener("click", () => {
 
 // Select a grade
 gradeButtons.forEach((button) => {
-
     button.addEventListener("click", () => {
-
         const grade = button.dataset.grade;
 
-        localStorage.setItem("grade", grade);
-
-        selectedGrade.textContent = `My grade is Grade ${grade}`;
+        localStorage.setItem("studentGrade", grade);
 
         gradeButtons.forEach((otherButton) => {
             otherButton.classList.remove("selected");
         });
 
         button.classList.add("selected");
+
+        selectedGrade.textContent = `My grade is Grade ${grade}`;
+
+        setTimeout(() => {
+            gradeOverlay.classList.remove("show");
+        }, 400);
+    });
     });
 
-});
 
-
-// Close when clicking outside the modal
-gradeOverlay.addEventListener("click", (event) => {
-
-    if (event.target === gradeOverlay) {
-        gradeOverlay.classList.remove("show");
-    }
+    // Close when clicking outside the modal
+    gradeOverlay.addEventListener("click", (event) => {
+        if (event.target === gradeOverlay) {
+            gradeOverlay.classList.remove("show");
+        }
+    });
 
 });

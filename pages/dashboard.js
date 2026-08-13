@@ -1,6 +1,3 @@
-logo.addEventListener("click", () => {
-    location.reload();
-});
 // ================================
 // 🔥 STREAK SYSTEM
 // ================================

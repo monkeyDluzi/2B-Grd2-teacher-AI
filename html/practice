@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Practice - 2B AI Teacher</title>
+  <link rel="stylesheet" href="../css/shared.css" />
+  <link rel="stylesheet" href="../css/practice.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="../images/IMG_0420.jpeg">
+  <script src="../js/layout.js"></script>
+</head>
+
+<body>
+  <!-- Header Navigation -->
+  <header class="header" role="banner"></header>
+
+  <!-- Main Content -->
+  <main class="practice-content" role="main">
+    <div class="practice-header">
+      <h1 class="practice-title">Choose Your Subject</h1>
+      <p class="practice-subtitle">Select a subject to start learning with Ontario Curriculum</p>
+      <div class="grade-indicator">
+        <span class="grade-label">Your Grade:</span>
+        <span class="grade-value" id="currentGrade">Loading...</span>
+      </div>
+    </div>
+
+    <!-- Subject Selection Cards -->
+    <div class="subjects-container">
+      <div class="subject-card math-card" data-subject="math">
+        <div class="subject-icon">🔢</div>
+        <h2 class="subject-name">Math</h2>
+        <p class="subject-description">Numbers, geometry, measurement, and more!</p>
+        <div class="subject-themes" id="math-themes"></div>
+        <button class="select-subject-btn" aria-label="Select Math subject">Select Math</button>
+      </div>
+
+      <div class="subject-card language-card" data-subject="language">
+        <div class="subject-icon">📚</div>
+        <h2 class="subject-name">Language</h2>
+        <p class="subject-description">Reading, writing, and communication skills</p>
+        <div class="subject-themes" id="language-themes"></div>
+        <button class="select-subject-btn" aria-label="Select Language subject">Select Language</button>
+      </div>
+
+      <div class="subject-card science-card" data-subject="science">
+        <div class="subject-icon">🔬</div>
+        <h2 class="subject-name">Science</h2>
+        <p class="subject-description">Explore the world through scientific inquiry</p>
+        <div class="subject-themes" id="science-themes"></div>
+        <button class="select-subject-btn" aria-label="Select Science subject">Select Science</button>
+      </div>
+    </div>
+
+    <!-- Theme Selection Modal -->
+    <div id="themeModal" class="theme-modal">
+      <div class="theme-modal-content">
+        <button id="closeThemeModal" class="close-modal" aria-label="Close theme selection">✕</button>
+        <h2 id="modalSubjectTitle">Select a Theme</h2>
+        <p id="modalSubjectDescription">Choose a specific topic to study</p>
+        <div class="themes-grid" id="themesGrid"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo"></footer>
+
+  <script src="../js/curriculum.js"></script>
+  <script src="../js/practice.js"></script>
+</body>
+</html>

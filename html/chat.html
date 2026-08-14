@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2B Chat</title>
+  <link rel="stylesheet" href="../css/shared.css" />
+  <link rel="stylesheet" href="../css/chat.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="../images/IMG_0420.jpeg">
+  <script src="../js/layout.js"></script>
+</head>
+
+<body>
+  <!-- Header Navigation -->
+  <header class="header" role="banner"></header>
+
+  <!-- Chat Section -->
+  <section class="chat-section" role="main" aria-label="Chat with 2B AI Teacher">
+    <div class="chat-container">
+      <div class="chat-header">
+        <h2>Chat with 2B AI Teacher</h2>
+      </div>
+      
+      <div class="chat-messages" id="chatMessages">
+        <div class="message received">
+          <div class="message-content">
+            <p>Hi there! I'm 2B, your AI learning friend. How can I help you today?</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="chat-input-container">
+        <input type="text" id="chatInput" class="chat-input" placeholder="Type your message..." aria-label="Type your message">
+        <button id="sendButton" class="send-button" aria-label="Send message">Send</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo"></footer>
+  
+<script src="../js/Chat.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="../css/shared.css" />
+        <link rel="stylesheet" href="../css/dashboard.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+        <link rel="icon" href="../images/IMG_0420.jpeg"> 
+        <script src="../js/layout.js"></script>     
+    </head>
+
+    <body>
+        <!-- Header Navigation -->
+        <header class="header" role="banner"></header>
+
+        <!-- Main Content -->
+        <main class="dashboard-content" role="main">
+            <div class="streak-container">
+                <div class="streak-card">
+                    <div class="streak-icon">
+                        🔥
+                    </div>
+                    <div class="streak-info">
+                        <div class="streak-label">Day Streak</div>
+                        <div class="streak-count">0</div>
+                    </div>
+                </div>
+            </div>
+            <div class="shop-container">
+                <div class="shop-card">
+                    <div class="shop-icon">
+                        🏪
+                    </div>
+                    <div class="shop-info">
+                        <div class="shop-label">2B Shop</div>
+                        <button class="shop-button">Go to Shop</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+            <!-- Shop Overlay -->
+        <div id="shopOverlay" class="shop-overlay">
+            <div class="shop-modal">
+                <button id="closeShop" class="close-shop">✕</button>
+
+                <h2>🏪 2B Shop</h2>
+                <p>Welcome to the 2B Shop!</p>
+
+                <!-- Shop items will go here later -->
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer" role="contentinfo"></footer>
+
+<!-- Grade Selection Overlay -->
+<div id="gradeOverlay" class="grade-overlay">
+    <div class="grade-modal">
+        <button id="closeGrade" class="close-grade">✕</button>
+
+        <h2>Choose My Grade</h2>
+        <p>Select my grade:</p>
+
+        <div class="grade-buttons">
+            <button class="grade-button" data-grade="4">Grade 4</button>
+            <button class="grade-button" data-grade="5">Grade 5</button>
+            <button class="grade-button" data-grade="6">Grade 6</button>
+            <button class="grade-button" data-grade="7">Grade 7</button>
+        </div>
+
+        <p id="selectedGrade">No grade selected</p>
+    </div>
+</div>
+
+
+
+        <script src="../js/dashboard.js"></script>
+    </body>
+
+</html>

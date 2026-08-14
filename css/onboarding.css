@@ -1,0 +1,114 @@
+.onboarding-section {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: calc(100vh - 200px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-2xl) var(--spacing-lg);
+}
+
+.onboarding-card {
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: var(--spacing-3xl);
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  animation: fadeInUp 0.8s var(--ease-out);
+}
+
+.onboarding-icon {
+  font-size: 64px;
+  margin-bottom: var(--spacing-lg);
+  animation: bounce 1s ease infinite;
+}
+
+.onboarding-card h1 {
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-md);
+}
+
+.onboarding-card p {
+  font-size: 16px;
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-2xl);
+}
+
+.onboarding-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  text-align: left;
+}
+
+.onboarding-form label {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-xs);
+  display: block;
+}
+
+.onboarding-form input,
+.onboarding-form select {
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 2px solid var(--color-gray-light);
+  border-radius: var(--radius-md);
+  font-size: 16px;
+  font-family: 'Nunito', Arial, sans-serif;
+  color: var(--color-text);
+  background: white;
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+
+.onboarding-form input:focus,
+.onboarding-form select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.continue-btn {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-xl);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: transform var(--duration-normal) var(--ease-out), box-shadow var(--duration-normal) var(--ease-out);
+}
+
+.continue-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: var(--shadow-lg);
+}
+
+.continue-btn:focus {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+.continue-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+@media (max-width: 480px) {
+  .onboarding-card {
+    padding: var(--spacing-2xl);
+  }
+
+  .onboarding-card h1 {
+    font-size: 24px;
+  }
+
+  .onboarding-icon {
+    font-size: 48px;
+  }
+}

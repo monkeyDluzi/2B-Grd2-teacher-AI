@@ -18,12 +18,12 @@ CORS(app, resources={r"/api/*": {"origins": [
 ]}})
 
 # 1. Grab both API keys from your environment variables (.env or Render)
-KEY_1 = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
-KEY_2 = os.getenv("FRIEND_GEMINI_KEY")  
+KEY_1 = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY") or os.getenv("MY_GEMINI_KEY")
+KEY_2 = os.getenv("FRIEND_GEMINI_KEY")
 
-# Create a list of the keys that actually exist
+# Create a list of the keys that actually exist (stripped of stray whitespace)
 API_KEYS = [KEY_1, KEY_2]
-API_KEYS = [key for key in API_KEYS if key]
+API_KEYS = [key.strip() for key in API_KEYS if key and key.strip()]
 
 # 2. Build a list of separate GenAI clients automatically
 CLIENTS = []
@@ -64,6 +64,7 @@ def chat():
         })
 
     # 3. Try to loop through our available clients if one fails (out of requests)
+    last_error = None
     for _ in range(len(CLIENTS)):
         try:
             active_client = CLIENTS[current_client_index]
@@ -71,7 +72,7 @@ def chat():
 
             # Use the Interactions API just like your original code
             interaction = active_client.interactions.create(
-                model="gemini-2.5-flash",
+                model="gemini-flash-lite-latest",
                 input=user_message,
                 system_instruction=(
                     "You are 2B, a friendly, encouraging AI teacher for any Grade. "
@@ -96,7 +97,11 @@ def chat():
 
     # 4. If the code tries ALL keys and they all fail:
     return jsonify({
-        "reply": "2B says: I am resting right now! My daily energy limits have been reached. Please check back tomorrow! 🌟"
+        "reply": "2B says: I am resting right now! My daily energy limits have been reached. Please check back tomorrow! 🌟",
+        "diagnostic": {
+            "error": str(last_error) if last_error else "All API keys failed",
+            "keys_tried": len(CLIENTS)
+        }
     }), 200
 
 if __name__ == "__main__":

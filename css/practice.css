@@ -478,6 +478,18 @@ body {
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
+.theme-topic-count {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: var(--spacing-xs);
+}
+
+.theme-item:hover .theme-topic-count {
+  color: rgba(26, 26, 46, 0.7);
+}
+
 /* Animations */
 @keyframes fadeInUp {
   from {
@@ -499,6 +511,17 @@ body {
   }
   60% {
     transform: translateY(-5px);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
   }
 }
 

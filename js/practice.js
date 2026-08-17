@@ -54,41 +54,25 @@ function populateThemePreviews(grade) {
 
   const gradeCurriculum = ontarioCurriculum[grade];
 
-  // Populate math themes preview
-  const mathThemesContainer = document.getElementById("math-themes");
-  if (mathThemesContainer && gradeCurriculum.math) {
-    mathThemesContainer.innerHTML = gradeCurriculum.math
-      .slice(0, 3)
-      .map(theme => `<span class="theme-tag">${theme}</span>`)
-      .join('');
-    if (gradeCurriculum.math.length > 3) {
-      mathThemesContainer.innerHTML += `<span class="theme-tag">+${gradeCurriculum.math.length - 3} more</span>`;
-    }
-  }
+  const subjectContainers = {
+    math: document.getElementById("math-themes"),
+    language: document.getElementById("language-themes"),
+    science: document.getElementById("science-themes")
+  };
 
-  // Populate language themes preview
-  const languageThemesContainer = document.getElementById("language-themes");
-  if (languageThemesContainer && gradeCurriculum.language) {
-    languageThemesContainer.innerHTML = gradeCurriculum.language
-      .slice(0, 3)
-      .map(theme => `<span class="theme-tag">${theme}</span>`)
-      .join('');
-    if (gradeCurriculum.language.length > 3) {
-      languageThemesContainer.innerHTML += `<span class="theme-tag">+${gradeCurriculum.language.length - 3} more</span>`;
-    }
-  }
+  Object.entries(subjectContainers).forEach(([subject, container]) => {
+    const strands = gradeCurriculum[subject] && gradeCurriculum[subject].strands;
+    if (!container || !Array.isArray(strands)) return;
 
-  // Populate science themes preview
-  const scienceThemesContainer = document.getElementById("science-themes");
-  if (scienceThemesContainer && gradeCurriculum.science) {
-    scienceThemesContainer.innerHTML = gradeCurriculum.science
-      .slice(0, 3)
-      .map(theme => `<span class="theme-tag">${theme}</span>`)
+    const previewStrands = strands.slice(0, 3);
+    container.innerHTML = previewStrands
+      .map(strand => `<span class="theme-tag">${strand.name}</span>`)
       .join('');
-    if (gradeCurriculum.science.length > 3) {
-      scienceThemesContainer.innerHTML += `<span class="theme-tag">+${gradeCurriculum.science.length - 3} more</span>`;
+
+    if (strands.length > 3) {
+      container.innerHTML += `<span class="theme-tag">+${strands.length - 3} more</span>`;
     }
-  }
+  });
 }
 
 function setupSubjectCards(grade) {
@@ -116,7 +100,8 @@ function openThemeModal(subject, grade) {
     return;
   }
 
-  const themes = ontarioCurriculum[grade][subject];
+  const subjectData = ontarioCurriculum[grade][subject];
+  const themes = subjectData.strands;
   const modal = document.getElementById("themeModal");
   const modalTitle = document.getElementById("modalSubjectTitle");
   const modalDescription = document.getElementById("modalSubjectDescription");
@@ -141,20 +126,25 @@ function openThemeModal(subject, grade) {
   // Clear and populate themes grid
   themesGrid.innerHTML = "";
   
-  themes.forEach((theme, index) => {
+  themes.forEach((strand, index) => {
     const themeItem = document.createElement("div");
     themeItem.className = "theme-item";
     themeItem.style.animationDelay = `${index * 0.1}s`;
-    
+
     const themeTitle = document.createElement("h3");
-    themeTitle.textContent = theme;
-    
+    themeTitle.textContent = strand.name;
+
+    const topicCount = document.createElement("span");
+    topicCount.className = "theme-topic-count";
+    topicCount.textContent = `${strand.topics.length} topics`;
+
     themeItem.appendChild(themeTitle);
-    
+    themeItem.appendChild(topicCount);
+
     themeItem.addEventListener("click", () => {
-      selectTheme(subject, theme, grade);
+      selectTheme(subject, strand.name, grade);
     });
-    
+
     themesGrid.appendChild(themeItem);
   });
 
@@ -227,4 +217,3 @@ function showMessage(message) {
     setTimeout(() => toast.remove(), 300);
   }, 3000);
 }
-
